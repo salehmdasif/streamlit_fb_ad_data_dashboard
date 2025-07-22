@@ -18,7 +18,8 @@ with st.sidebar:
     st.markdown("© [Mohammad Asif](https://www.linkedin.com/in/salehmdasif)")
     st.subheader("\nHow to Use the App")
     st.write("""
-        Upload your dataset using the file uploader in the sidebar.
+        Use dataset only after cleaning.
+        \nUpload your dataset using the file uploader in the sidebar.
         \nSelect the target variable and desired features for analysis.
         \nExplore correlations between variables and generate visualizations.
         \nReview the linear regression analysis results and hypothesis testing outputs to gain insights into feature impacts.
