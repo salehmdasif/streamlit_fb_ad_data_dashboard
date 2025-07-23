@@ -32,7 +32,7 @@ df = None
 col1, col2 = st.columns(2)
 
 with col1:
-    uploaded_file = st.file_uploader("Choose a CSV/XLS file", type=["csv", "xls", "xlsx"])
+    uploaded_file = st.file_uploader("Choose a CSV/XLS file (Must be clean & valid data set)", type=["csv", "xls", "xlsx"])
 
     # Process the uploaded file if it is uploaded
     if uploaded_file is not None:
@@ -53,11 +53,11 @@ with col1:
             st.error(f"An error occurred while reading the file: {e}")
 
     with col2:
-        data_link = st.text_input("Or please provide link to your data file ", key="data_link")
+        data_link = st.text_input("Or please provide link to your data file (Must be clean & valid data set) ", key="data_link")
         # Displaying as plain text using HTML
         link_text = "https://ravelweb.com/data/cleaned_ad_data.csv"
         st.markdown(
-            f"Or try with this link (copy and paste) 👉 <span style='pointer-events: none; color: black;'>{link_text}</span>",
+            f"Or try with this link 👉 <span style='pointer-events: none; color: black;'>{link_text}</span>",
             unsafe_allow_html=True)
 
         # Check if there was an update in the input and the button is clicked or data_link changed
