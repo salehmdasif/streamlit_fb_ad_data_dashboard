@@ -56,7 +56,7 @@ with col1:
     with col2:
         data_link = st.text_input("Or please provide link to your data file (Must be clean & valid data set) ", key="data_link")
         # Displaying as plain text using HTML
-        link_text = "https://ravelweb.com/data/cleaned_ad_data.csv"
+        link_text = "https://tinyurl.com/4wveu5wn/cleaned_ad_data.csv"
         st.markdown(
             f"Or try with this link 👉 <span style='pointer-events: none; color: black;'>{link_text}</span>",
             unsafe_allow_html=True)
@@ -207,16 +207,8 @@ if df is not None:
         top_10 = df.sort_values(by=filtered_column, ascending=ascending).head(10)
         st.write(f"Top 10 ads with {filtered_column}:")
 
-        # Highlight the specified column dynamically using the imported function
-        styled_top_10 = (
-            top_10[columns]
-            .style
-            .apply(highlight_column, column_to_highlight=filtered_column, axis=1)
-            # Format only numeric values
-            .format(na_rep="-",  # Display a hyphen for NaN values
-                    formatter=lambda x: f"{x:.2f}" if pd.api.types.is_numeric_dtype(x) else x)
-        )
-        st.dataframe(styled_top_10)
+        # Display the DataFrame without any extra formatting or styling
+        st.dataframe(top_10[columns])
 
         # Select another column (matrix) to plot
         st.subheader("Select a column to plot")
