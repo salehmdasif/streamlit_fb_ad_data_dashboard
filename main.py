@@ -9,6 +9,7 @@ from scripts.script import winningAdSelector, highlight_column
 
 # Set the app to wide mode
 st.set_page_config(layout="wide")
+st.set_page_config(page_title="Facebook Ad Data Analysis Dashboard")
 st.title("Facebook Ad Data Analysis Dashboard")
 
 # Sidebar content
